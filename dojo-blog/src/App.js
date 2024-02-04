@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import Navbar from 'Navbar';
 
 function App() {
 
@@ -7,10 +8,11 @@ function App() {
   const likes = 58;
   const link = "https://www.google.com";
 
-
   return (
     <div className="App">
       <div className="content">
+        <Navbar />
+
         <h1>{ title }</h1>
         <p>Liked { likes } times </p>
         <p> { [1,2,3,4,7] } </p>
