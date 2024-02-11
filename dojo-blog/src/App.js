@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <div className="content">
         <Home />
-        <a href={link}>Visit Google</a>
+        {/* <a href={link}>Visit Google</a> */}
 
       </div>
     </div>
