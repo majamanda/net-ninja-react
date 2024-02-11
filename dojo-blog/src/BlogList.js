@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const BlogList = ({blogs, title}) => {
+const BlogList = ({ blogs, title }) => {
 
-    return ( 
+    return (
         <div className="home">
-            <h2>{ title }</h2>
-            {blogs.map((blog)=>(
+            <h2>{title}</h2>
+            {blogs.map((blog) => (
                 <div className="blog-preview" key={blog.id}>
                     <h2 className="blog-title">{blog.title}</h2>
                     <p className="body">{blog.body}</p>
@@ -15,5 +15,5 @@ const BlogList = ({blogs, title}) => {
         </div>
     );
 }
- 
+
 export default BlogList;
