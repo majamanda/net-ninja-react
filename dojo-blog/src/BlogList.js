@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BlogList = ({blogs, title, handleDelete}) => {
+const BlogList = ({blogs, title}) => {
 
     return ( 
         <div className="home">
@@ -10,7 +10,6 @@ const BlogList = ({blogs, title, handleDelete}) => {
                     <h2 className="blog-title">{blog.title}</h2>
                     <p className="body">{blog.body}</p>
                     <p className="author">{blog.author}</p>
-                    <button onClick={()=> handleDelete(blog.id)}>Delete</button>
                 </div>
             ))}
         </div>
