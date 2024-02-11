@@ -1,11 +1,6 @@
 import { useState } from "react";
 
 const BlogList = ({blogs, title, handleDelete}) => {
-    
-// const BlogList = (props) => {
-
-//     const blogs = props.blogs;
-//     const title = props.title;
 
     return ( 
         <div className="home">
