@@ -18,11 +18,17 @@ const Create = () => {
         />
 
         <label htmlFor="title">Blog body:</label>
-        <textarea name="content">
-        </textarea>
+        <textarea 
+          required
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+        ></textarea>
 
         <label htmlFor="title">Blog author:</label>
-        <select>
+        <select
+          required
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}>
           <option value="ben">Ben</option>
           <option value="Joe">Joe</option>
           <option value="Mary">Mary</option>
@@ -30,6 +36,7 @@ const Create = () => {
         <button>Add blog</button>
         <p>{ title }</p>
         <p>{ body }</p>
+        <p>{ author }</p>
       </form>
     </div>
   );
