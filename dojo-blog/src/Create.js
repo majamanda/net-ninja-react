@@ -9,23 +9,25 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = {title, body, author};
-    
-    setIsPending(true);
+    const blog = { title, body, author };
 
-    fetch('http://localhost:8000/blogs', { 
-      method: 'POST',
-      headers: {"Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-    }).then(() => {
-      console.log('new blog added');
-      setIsPending(false);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+    setIsPending(true);
+    // for simulating a 1 sec fetch wait
+    setTimeout(() => {
+      fetch('http://localhost:8000/blogs', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(blog)
+      }).then(() => {
+        console.log('new blog added');
+        setIsPending(false);
+      })
+        .catch(err => {
+          console.log(err);
+        });
+    }, 1000);
   }
-  
+
   return (
     <div className="create">
       <h2>Add a new blog</h2>
@@ -39,7 +41,7 @@ const Create = () => {
         />
 
         <label htmlFor="title">Blog body:</label>
-        <textarea 
+        <textarea
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
@@ -55,9 +57,9 @@ const Create = () => {
           <option value="Mary">Mary</option>
         </select>
 
-        { !isPending &&<button>Add blog</button> }
-        { isPending &&<button disabled>Adding blog...</button> }
-        <p>{ title }</p>
+        {!isPending && <button>Add blog</button>}
+        {isPending && <button disabled>Adding blog...</button>}
+        <p>{title}</p>
 
       </form>
     </div>
